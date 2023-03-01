@@ -1,0 +1,194 @@
+.header {
+    background: transparent;
+    //left: 45px;
+    position: fixed;
+    top: 27px;
+    width: 100%;
+    z-index: 20;
+    transition: $animationSpeed;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1500px;
+        width: 100%;
+        transition: $animationSpeed;
+        @media screen and (max-width: calc($preDesktop + 40px)) {
+            max-width: 1300px;
+        }
+        @media screen and (max-width: calc($desktop + 40px)) {
+            max-width: 1160px;
+        }
+        @media screen and (max-width: calc($desktop - 100px)) {
+            gap: 20px;
+            justify-content: center;
+        }
+        @media screen and (max-width: calc($tablet + 250px)) {
+            justify-content: start;
+        }
+        @media screen and (max-width: calc($preMobile - 30px)) {
+            justify-content: center;
+        }
+    }
+    &__burger-menu {
+        display: none;
+        @media screen and (max-width: calc($tablet + 250px)) {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+    }
+    &__burger-span {
+        background-color: #baf1ff;
+        height: 5px;
+        width: 44px;
+    }
+    &__image {
+        align-self: center;
+    }
+    &__scrolled {
+        top: 0;
+        background: $promoSectionBgColor;
+    }
+    &__select-menu-link {
+        text-decoration: none;
+        &:active {
+            color: $buttonColor;
+        }
+    }
+    &__nav {
+        height: 25px;
+        display: flex;
+        flex-direction: row;
+        gap: 39px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-evenly;
+        align-self: start;
+        border-radius: 4px;
+        transition: $animationSpeed;
+        @media screen and (max-width: calc($desktop + 40px)) {
+            gap: 20px;
+        }
+        @media screen and (max-width: calc($tablet + 250px)) {
+            display: none;
+            position: fixed;
+            left: 90px;
+            top: 90px;
+            flex-direction: column;
+            background-color: $navTextColor;
+            width: 120px;
+            align-items: center;
+            height: auto;
+        }
+        &_type-visible {
+            display: flex;
+        }
+    }
+    &__nav-container {
+        @media screen and (max-width: calc($tablet + 250px)) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__nav-item {
+        @extend %textSemiBold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+    &__select {
+        color: $navTextColor;
+        transition: $animationSpeed;
+        cursor: pointer;
+        @include reset;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1);
+        }
+        @media screen and (max-width: calc($tablet + 250px)) {
+            color: $formTextColor;
+        }
+    }
+    &__close-icon {
+        cursor: pointer;
+        display: none;
+        width: 24px;
+        height: 24px;
+        transition: $animationSpeed;
+        background-color: $buttonTextColor;
+        border-radius: 50%;
+        background-image: url(../images/close.svg);
+        &_type-visible {
+            display: flex;
+            @media screen and (max-width: calc($tablet + 250px)) {
+                top: 0;
+                left: 110px;
+                position: fixed;
+                left: 59px;
+                top: 90px;
+            }
+        }
+    }
+    &__button {
+        width: 246px;
+        height: 60px;
+        background-color: $buttonColor;
+        box-shadow: 0px 22px 22px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        color: $buttonTextColor;
+        @extend %buttonText;
+        border: none;
+        transition: $animationSpeed;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1);
+        }
+        @media screen and (max-width: calc($desktop - 100px)) {
+            width: 170px;
+        }
+    }
+    &__select-menu {
+        list-style: none;
+        @include reset;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 154px;
+        height: 125px;
+        background-color: $navTextColor;
+        border-radius: 7px;
+        justify-content: space-between;
+        padding-left: 19px;
+        opacity: 0;
+        visibility: hidden;
+        box-sizing: border-box;
+        transition: $animationSpeed;
+        &_type-visible {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            @media screen and (max-width: calc($tablet + 250px)) {
+                top: 0;
+                left: 110px;
+                position: fixed;
+                left: 221px;
+                top: 89px;
+            }
+            @media screen and (max-width: calc($preMobile - 30px)) {
+                left: 212px;
+                width: 105px;
+            }
+        }
+    }
+}
