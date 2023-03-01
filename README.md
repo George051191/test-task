@@ -1,4 +1,6 @@
 # test-task
-##git clone
-##npm i
-##npm run dev
+1.git clone
+
+2.npm i
+
+3.npm run dev
